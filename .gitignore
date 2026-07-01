@@ -3,7 +3,7 @@
 ################################################################################
 
 /ECommerce.Api/bin
-/.vs/ECommerce.slnx
+/.vs/
 /ECommerce.Api/obj
 /ECommerce.Api/appsettings.Development.json
 /ECommerce.Api/appsettings.json
