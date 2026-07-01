@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="ECommerce.Api/ECommerce.Api.csproj" />
+    <Project Path="ECommerce.BusinessLogic/ECommerce.BusinessLogic.csproj" />
+    <Project Path="ECommerce.Core/ECommerce.Core.csproj" />
+    <Project Path="ECommerce.DataAccess/ECommerce.DataAccess.csproj" />
+  </Folder>
+</Solution>

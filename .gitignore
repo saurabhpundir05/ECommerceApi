@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ECommerce.Api/bin
+/.vs/ECommerce.slnx
+/ECommerce.Api/obj
+/ECommerce.Api/appsettings.Development.json
+/ECommerce.Api/appsettings.json
+/ECommerce.BusinessLogic/obj
+/ECommerce.BusinessLogic/bin
+/ECommerce.Core/obj
+/ECommerce.Core/bin
+/ECommerce.DataAccess/obj
+/ECommerce.DataAccess/bin
