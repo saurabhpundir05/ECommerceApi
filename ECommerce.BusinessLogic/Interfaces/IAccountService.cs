@@ -7,6 +7,9 @@ namespace ECommerce.BusinessLogic.Interfaces
 {
     public interface IAccountService
     {
-        Task<bool> CreateUser(AccountSignUpDTO requestData);
+        Task<bool> Create(AccountSignUpDTO signUpData);
+        Task<AccountLoginResponseDTO?> Login(AccountLoginDTO loginData);
+        Task <bool> Update(AccountUpdateDTO updateData);
+        Task<bool> Delete(AccountLoginDTO deleteData);
     }
 }

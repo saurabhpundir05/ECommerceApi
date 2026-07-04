@@ -1,6 +1,7 @@
 #region imports
 using ECommerce.BusinessLogic.Interfaces;
 using ECommerce.BusinessLogic.Services;
+using ECommerce.Core.Helpers;
 using ECommerce.DataAccess.Data;
 using ECommerce.DataAccess.Interfaces;
 using ECommerce.DataAccess.Repositories;
@@ -33,6 +34,9 @@ builder.Services.AddScoped<AccountService>();
 builder.Services.AddScoped(typeof(IEntityRepository<>), typeof(EntityRepository<>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<JwtTokenHelper>();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 
 builder.Services.AddCors(options =>
 {

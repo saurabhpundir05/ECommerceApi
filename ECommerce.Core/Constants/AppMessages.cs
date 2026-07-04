@@ -10,6 +10,12 @@ namespace ECommerce.Core.Constants
         {
             public const string Created = "Account created successfully.";
             public const string Exists = "Account already exists.";
+            public const string NotExists = "Account not exists.";
+            public const string Login = "Login successful.";
+            public const string UpdateSuccess = "Update successful.";
+            public const string UpdateFail = "Update failed.";
+            public const string DeleteSuccess = "Delete successful.";
+            public const string DeleteFail = "Deletion failed.";
         }
     }
 }

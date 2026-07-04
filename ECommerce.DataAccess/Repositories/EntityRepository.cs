@@ -1,11 +1,11 @@
-﻿using ECommerce.DataAccess.Data;
+﻿#region imports
+using ECommerce.DataAccess.Data;
 using ECommerce.DataAccess.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Text;
+#endregion
 
+#region Entity Repository
 namespace ECommerce.DataAccess.Repositories
 {
     public class EntityRepository<T> : IEntityRepository<T> where T : class
@@ -19,9 +19,14 @@ namespace ECommerce.DataAccess.Repositories
             _dbSet = _context.Set<T>();
         }
 
-        public IList<T> Select(Expression<Func<T, bool>> expression)
+        public async Task<IList<T>> SelectAsync(Expression<Func<T, bool>> expression)
         {
-            return _dbSet.Where(expression).ToList();
+            return await _dbSet.Where(expression).ToListAsync();
+        }
+
+        public async Task<T?> FirstOrDefaultAsync(Expression<Func<T, bool>> expression)
+        {
+            return await _dbSet.FirstOrDefaultAsync(expression);
         }
 
         public IQueryable<T> AllIncluding(params Expression<Func<T, object>>[] includeProperties)
@@ -35,28 +40,15 @@ namespace ECommerce.DataAccess.Repositories
 
             return query;
         }
-        public T Find(int id)
+        public async Task<T?> FindAsync(params object[] keyValues)
         {
-            return _dbSet.Find(id);
+            return await _dbSet.FindAsync(keyValues);
         }
 
         public void Insert(T entity)
         {
             _dbSet.Add(entity);
         }
-
-        public void Delete(int id)
-        {
-            var entity = _dbSet.Find(id);
-            if (entity != null)
-            {
-                _dbSet.Remove(entity);
-            }
-        }
-
-        public void Dispose()
-        {
-            _context.Dispose();
-        }
     }
 }
+#endregion

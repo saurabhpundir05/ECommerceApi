@@ -5,12 +5,12 @@ using System.Text;
 
 namespace ECommerce.DataAccess.Interfaces
 {
-    public interface IEntityRepository<T> : IDisposable where T : class
+    public interface IEntityRepository<T> where T : class
     {
-        IList<T> Select(Expression<Func<T, bool>> expression);
+        Task<IList<T>> SelectAsync(Expression<Func<T, bool>> expression);
+        Task<T?> FirstOrDefaultAsync(Expression<Func<T, bool>> expression);
         IQueryable<T> AllIncluding(params Expression<Func<T, object>>[] includeProperties);
-        T Find(int id);
+        Task<T?> FindAsync(params object[] keyValues);
         void Insert(T entity);
-        void Delete(int id);
     }
 }
