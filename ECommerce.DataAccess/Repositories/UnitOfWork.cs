@@ -21,11 +21,6 @@ namespace ECommerce.DataAccess.Repositories
             return new EntityRepository<T>(_context);
         }
 
-        public int SaveChanges()
-        {
-            return _context.SaveChanges();
-        }
-
         public async Task<int> SaveChangesAsync()
         {
             return await _context.SaveChangesAsync();
