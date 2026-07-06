@@ -16,6 +16,11 @@ namespace ECommerce.DataAccess.Data
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<Discount> Discounts { get; set; }
+        public DbSet<Load> Loads { get; set; }
+        public DbSet<Payment> Payment { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

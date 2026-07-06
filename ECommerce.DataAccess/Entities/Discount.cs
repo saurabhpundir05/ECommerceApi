@@ -9,6 +9,7 @@ namespace ECommerce.DataAccess.Entities
     {
         public int Id { get; set; } 
         public int ProductId { get; set; }
+        public Product Product { get; set; }
         public DiscountType Type { get; set; }
         public decimal DiscountValue { get; set; }
     }

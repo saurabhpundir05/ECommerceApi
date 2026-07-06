@@ -18,5 +18,7 @@ namespace ECommerce.DataAccess.Entities
         public DateTime? DeletedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         public UserStatus Status { get; set; }
+
+        public ICollection<Product> Products { get; set; } = new List<Product>();
     }
 }

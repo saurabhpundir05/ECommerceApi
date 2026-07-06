@@ -1,9 +1,5 @@
 ﻿using ECommerce.DataAccess.Data;
 using ECommerce.DataAccess.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ECommerce.DataAccess.Repositories
 {
